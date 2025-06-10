@@ -44,6 +44,16 @@ export default function tabLayout() {
                 }}
             />
 
+            <Tabs.Screen
+                name="buscaCEP"
+                options={{
+                    title: 'Buscar CEP',
+                    tabBarIcon: ({ color, focused }) => (
+                        <Ionicons name={focused ? 'id-card' : 'id-card-outline'} color={color} size={24} />
+                    ),
+                }}
+            />
+
         </Tabs>
     );
 }
