@@ -22,8 +22,15 @@ export default function Button({ label, theme, onPress }: Props) {
       </View>
     );
   }
-}
 
+  return (
+      <View style={styles.buttonContainer}>
+          <Pressable style={styles.button} onPress={onPress}>
+              <Text style={styles.buttonLabel}>{label}</Text>
+          </Pressable>
+      </View>
+  );
+}
 const styles = StyleSheet.create({
   buttonContainer: {
     width: 320,
