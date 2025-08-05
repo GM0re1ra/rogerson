@@ -1,15 +1,16 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ImageSourcePropType } from "react-native";
 import Button from '../components/Button';
 import ImageViewer from "../components/imageViewer";
 import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react';
 import IconButton from '../components/IconButton';
 import CircleButton from '../components/CircleButton';
-import EmojiPicker from "../components/EmojiPicker";
+
+const PlaceholderImage = require('@/assets/images/fundo.jpg')
 
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
-  const [showAppOptions, setShowAppOptions] = useState<boolean>(false)
+  const [showAppOptions, setShowAppOptions] = useState<boolean>(false);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 
   const pickImageAsync = async () => {
@@ -43,7 +44,7 @@ export default function Index() {
     // depois
   };
 
-const PlaceholderImage = require('@/assets/images/fundo.jpg')
+
 
   return (
     <View style={styles.container}>
@@ -64,9 +65,6 @@ const PlaceholderImage = require('@/assets/images/fundo.jpg')
         <Button label="Use essa foto" onPress={() => setShowAppOptions(true)}/>
       </View>
       )}
-      <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
-        {/*lista */}
-      </EmojiPicker>
     </View>
   );
 }
